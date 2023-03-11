@@ -1,0 +1,68 @@
+.SideNav{
+    background: black;
+    width: fit-content;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: fixed;
+}
+.top-SideNav{
+    display: flex;
+    flex-direction: column;
+    width: 228px;
+}
+.ThreeDot{
+    margin: 18px;
+    margin-left: 26px;
+    width: 24px;
+}
+.SideNav-img{
+    margin-right: 20px;
+}
+.top-SideNav-item a{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+    color: rgb(205, 205, 205);
+    text-decoration: none;
+}
+.top-SideNav-item-1{
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-bottom: 20px;
+}
+.top-SideNav-item-2{
+    padding-right: 16px;
+    padding-left: 16px;
+}
+.top-SideNav-item a:hover{
+    color: white;
+    
+}
+/* <<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>> */
+.Sep{
+    background: gray;
+    height: 1px;
+    margin: 12px 10px 12px 10px;
+    opacity: 50%;
+}
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>> */
+.bottom-SideNav ul a {
+    text-decoration: none;
+    
+}
+.bottom-SideNav ul a li{
+    list-style: none;
+    margin-right: 10px;
+    color: gray;
+    margin-bottom: 8px;
+
+}
+ul{
+    padding-inline-start: 26px;
+}
+
+
+

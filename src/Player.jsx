@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {
     styled, Typography, Slider,
-    Paper, Stack, Box
+    Paper, Stack, Box,
 } from '@mui/material';
 
 
@@ -25,33 +25,42 @@ import enough from './music/Enough - NEFFEX.mp3'
 import immortal from './music/Immortal - NEFFEX.mp3';
 import playDead from './music/Play Dead - NEFFEX.mp3';
 import winning from './music/Winning - NEFFEX.mp3';
+import { Height } from '@mui/icons-material';
+import { ThemeContext } from '@emotion/react';
 // #endregion ---------------------------------------------------------------
 
 // #region -------- Styled Components -----------------------------------------
 const Div = styled('div')(({theme}) => ({
     backgroundColor: 'black',
-    height:'100vh',
+    height:'300px',
     width:'100vw',
-    paddingTop: theme.spacing(6)
+    paddingTop: theme.spacing(6),
 }))
 
 const CustomPaper = styled(Paper)(({theme}) => ({
-    backgroundColor: '#4c4c4c',
-    marginLeft: theme.spacing(6),
-    marginRight: theme.spacing(6),
-    padding: theme.spacing(2)
+    position:'fixed',
+    zIndex:1,
+    backgroundColor:'#181818',
+    display:'flex',
+    width:'100%',
+    flexDirection:'column',
+    bottom:0,
+    height:'90px',
+    
 }))
 
 const PSlider = styled(Slider)(({theme, ...props}) => ({
-    color: 'lime',
+    color: 'white',
     height: 2,
+    width:'200px',
     '&:hover': {
-        cursor: 'auto',
+        cursor: 'pointer',
     },
     '& .MuiSlider-thumb': {
         width: '13px',
         height: '13px',
         display: props.thumbless ? 'none' : 'block',
+        
     }
 }))
 // #endregion ---------------------------------------------------------------
@@ -143,10 +152,10 @@ export default function Player() {
     
     function VolumeBtns(){
         return mute
-            ? <VolumeOffIcon sx={{color: 'lime', '&:hover': {color: 'white'}}} onClick={() => setMute(!mute)} />
-            : volume <= 20 ? <VolumeMuteIcon sx={{color: 'lime', '&:hover': {color: 'white'}}} onClick={() => setMute(!mute)} />
-            : volume <= 75 ? <VolumeDownIcon sx={{color: 'lime', '&:hover': {color: 'white'}}} onClick={() => setMute(!mute)} />
-            : <VolumeUpIcon sx={{color: 'lime', '&:hover': {color: 'white'}}} onClick={() => setMute(!mute)} />
+            ? <VolumeOffIcon sx={{color: 'white', '&:hover': {color: 'white'}}} onClick={() => setMute(!mute)} />
+            : volume <= 20 ? <VolumeMuteIcon sx={{color: 'white', '&:hover': {color: 'white'}}} onClick={() => setMute(!mute)} />
+            : volume <= 75 ? <VolumeDownIcon sx={{color: 'white', '&:hover': {color: 'white'}}} onClick={() => setMute(!mute)} />
+            : <VolumeUpIcon sx={{color: 'white', '&:hover': {color: 'white'}}} onClick={() => setMute(!mute)} />
     }
 
     return (
@@ -177,20 +186,19 @@ export default function Player() {
                         }}>
                         <SkipPreviousIcon 
                             sx={{
-                                color: 'lime', 
+                                color: 'gray', 
                                 '&:hover': {color: 'white'}
                             }} 
                             onClick={toggleSkipBackward} disabled={true}/>
-                        <FastRewindIcon sx={{color: 'lime', '&:hover': {color: 'white'}}} onClick={toggleBackward}/>
+                        <FastRewindIcon sx={{color: 'gray', '&:hover': {color: 'white'}}} onClick={toggleBackward}/>
 
                         {!isPlaying
-                            ?   <PlayArrowIcon fontSize={'large'} sx={{color: 'lime', '&:hover': {color: 'white'}}} onClick={togglePlay}/>
-                            :   <PauseIcon fontSize={'large'} sx={{color: 'lime', '&:hover': {color: 'white'}}} onClick={togglePlay}/>
+                            ?   <PlayArrowIcon fontSize={'large'} sx={{color: 'white', '&:hover': {color: 'white'}}} onClick={togglePlay}/>
+                            :   <PauseIcon fontSize={'large'} sx={{color: 'black', '&:hover': {color: 'white'}}} onClick={togglePlay}/>
                         }
 
-
-                        <FastForwardIcon sx={{color: 'lime', '&:hover': {color: 'white'}}} onClick={toggleForward} />
-                        <SkipNextIcon sx={{color: 'lime', '&:hover': {color: 'white'}}} onClick={toggleSkipForward}/>
+                        <FastForwardIcon sx={{color: 'gray', '&:hover': {color: 'white'}}} onClick={toggleForward} />
+                        <SkipNextIcon sx={{color: 'gray', '&:hover': {color: 'white'}}} onClick={toggleSkipForward}/>
                     </Stack>
 
                     <Stack sx={{
@@ -202,9 +210,9 @@ export default function Player() {
                     display: 'flex',
                     alignItems: 'center'
                 }}>
-                    <Typography sx={{color: 'lime'}}>{formatTime(elapsed)}</Typography>
+                    <Typography sx={{color: 'white'}}>{formatTime(elapsed)}</Typography>
                     <PSlider thumbless value={elapsed} max={duration} />
-                    <Typography sx={{color: 'lime'}}>{formatTime(duration - elapsed)}</Typography>
+                    <Typography sx={{color: 'white'}}>{formatTime(duration - elapsed)}</Typography>
                 </Stack>
             </CustomPaper>
         </Div>

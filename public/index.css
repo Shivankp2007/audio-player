@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bck-frt-btn {
+    background-color: #121212;
+    border-radius: 100px;
+    margin: 8px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+    border: transparent;
+}
+.App{
+    display: flex;
+}
+.Content{
+    height: 100%;
+    width: 1676px;
+    position: absolute;
+    left: 227px;
+    display: flex;
+    flex-direction: column;
+}
+.Content-item{
+    background-color: #121212;
+}
+.css-advu14-MuiPaper-root {
+    background-color: #181818;
+    color: rgba(0, 0, 0, 0.87);
+    -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+    background-color: #181818;
+    margin-left: 48px;
+    margin-right: 48px;
+    padding: 16px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    right: -48px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: stretch;
+    cursor: pointer;
+}
+.css-15s8j5r-MuiSvgIcon-root {
+    background-color:white ;
+    border-radius: 30px;
+}
+.css-15s8j5r-MuiSvgIcon-root:hover {
+    color: black;
+}
+.css-15s8j5r-MuiSvgIcon-root{
+    color: black;
+}
+.css-gg4vpm {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+::-webkit-scrollbar{
+    background-color: #121212;
+    z-index: -1;
+
+}
+::-webkit-scrollbar-thumb{
+    background-color: gray;
+    opacity: 50%;
+    width: 10px;
+
+}
